@@ -18,6 +18,7 @@
         -webkit-background-size: cover;
         -o-background-size: cover;
         background-position: center center;
+    }
     body {
         font-family: Arial, sans-serif;
         padding: 20px;
@@ -38,53 +39,56 @@
 </style>
 </head>
 <body>
+    <h1>随机抽签工具</h1>
+    <div>
+        <label for="minNumber">最小值:</label>
+        <input type="number" id="minNumber" placeholder="请输入最小值">
+        <label for="maxNumber">最大值:</label>
+        <input type="number" id="maxNumber" placeholder="请输入最大值">
+    </div>
+    <button onclick="drawNumber()">抽取数字</button>
+    <div class="results">
+        <h3>抽取结果:</h3>
+        <p id="currentResult">尚未抽取</p>
+        <h3>已抽取的数字:</h3>
+        <p id="history">无</p>
+    </div>
+    <script>
+        let drawnNumbers = [];
 
-<div id="inputArea">
-    <label for="numbers">输入数字，用逗号分隔:</label>
-    <input type="text" id="numbers" placeholder="例如：1,2,3,4,5">
-</div>
+        function drawNumber() {
+            const min = parseInt(document.getElementById('minNumber').value);
+            const max = parseInt(document.getElementById('maxNumber').value);
 
-<button id="drawButton" onclick="drawLottery()">抽签</button>
+            if (isNaN(min) || isNaN(max) || min > max) {
+                alert("请输入有效的数字范围！");
+                return;
+            }
 
-<div id="result"></div>
-<div id="drawnNumbers">
-    <h3>历史抽中的数字：</h3>
-    <ul id="drawnNumbersList">
-    </ul>
-</div>
+            // 生成候选数字数组
+            const range = [];
+            for (let i = min; i <= max; i++) {
+                if (!drawnNumbers.includes(i)) {
+                    range.push(i);
+                }
+            }
 
-<script>
-function drawLottery() {
-    var input = document.getElementById('numbers').value;
-    var numbers = input.split(',').map(function(item) {
-        return item.trim();
-    });
+            if (range.length === 0) {
+                alert("所有数字已抽取完毕！");
+                return;
+            }
 
-    // 过滤掉空字符串，并转换为整数
-    numbers = numbers.filter(function(item) {
-        return item !== '' && !isNaN(item);
-    }).map(function(item) {
-        return parseInt(item, 10);
-    });
+            // 随机抽取
+            const randomIndex = Math.floor(Math.random() * range.length);
+            const drawnNumber = range[randomIndex];
 
-    if (numbers.length === 0) {
-        document.getElementById('result').innerText = '请输入有效的数字！';
-        return;
-    }
+            // 更新已抽取数字
+            drawnNumbers.push(drawnNumber);
 
-    var randomIndex = Math.floor(Math.random() * numbers.length);
-    var result = numbers[randomIndex];
-
-    // 显示结果
-    document.getElementById('result').innerText = '抽中的数字是：' + result;
-
-    // 添加到历史列表
-    var drawnNumbersList = document.getElementById('drawnNumbersList');
-    var listItem = document.createElement('li');
-    listItem.innerText = result;
-    drawnNumbersList.appendChild(listItem);
-}
-</script>
-
+            // 显示结果
+            document.getElementById('currentResult').textContent = drawnNumber;
+            document.getElementById('history').textContent = drawnNumbers.join(', ');
+        }
+    </script>
 </body>
 </html>
