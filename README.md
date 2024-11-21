@@ -1,42 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>随机抽签</title>
-<style>
-    body {
-        position:fixed;
-        top: 0;
-        left: 0;
-		width:200%;
-		height:200%;
-        min-width: 1000px;
-        background: url(./2.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        -webkit-background-size: cover;
-        -o-background-size: cover;
-        background-position: center center;
-    }
-    body {
-        font-family: Arial, sans-serif;
-        padding: 20px;
-    }
-    #inputArea {
-        margin-bottom: 10px;
-    }
-    #drawButton {
-        padding: 10px 20px;
-        font-size: 16px;
-        cursor: pointer;
-    }
-    #result {
-        margin-top: 20px;
-        font-size: 20px;
-        color: green;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>随机抽签</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            padding: 5px;
+            font-size: 16px;
+            margin: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .results {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
     <h1>随机抽签工具</h1>
@@ -53,6 +40,7 @@
         <h3>已抽取的数字:</h3>
         <p id="history">无</p>
     </div>
+    <img src="C:/Users/lenovo/Videos/10.24/项目说明书/6.jpg","weight="50%" height="50%">
     <script>
         let drawnNumbers = [];
 
