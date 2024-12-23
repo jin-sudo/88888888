@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>智游三晋——用黑神话视角看山西传统文化</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">山西文旅</div>
+        <nav>
+            <ul>
+                <li><a href="#home">首页</a></li>
+                <li><a href="#culture">文化介绍</a></li>
+                <li><a href="#ai-services">人工智能服务</a></li>
+                <li><a href="#contact">联系我们</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 首页部分 -->
+        <section id="home" class="home">
+            <div class="video-background">
+                <video autoplay loop id="video-background" controls muted>
+                    <source src="video.mp4" type="video/mp4">
+                    您的浏览器不支持视频标签。
+                </video>
+            </div>
+        
+            <div class="home-content">
+                <h1>智游三晋——用黑神话视角看山西传统文化</h1>
+                <p class="intro-text">感受山西传统文化与人工智能的完美结合，通过AI与黑神化悟空探索山西文化之美，体验黑神化悟空带来的全新视角。</p>
+                <button onclick="scrollToSection('culture')">探索文化介绍</button>
+            </div>
+        </section>
+        
+        <!-- 文化介绍部分 -->
+        <section id="culture" class="page">
+            <h2>文化介绍</h2>
+            <div class="content">
+                <p>山西是中国历史文化的重要发源地之一，黑神化悟空的形象完美融合了山西的传统文化与现代科技。从晋商文化到煤炭历史，从云冈石窟到精致的山西小吃，黑神化悟空将这些文化元素与虚拟现实、增强现实和人工智能等技术相结合，带您进入全新的体验世界。</p>
+                <div class="image">
+                    <img src="晋商文化.jpg" alt="山西晋商文化">
+                    <img src="晋祠.jpg" alt="晋祠景区">
+                    <img src="见知佛入.jpg" alt="佛教文化">
+                    <img src="云冈石窟.jpg" alt="云冈石窟遗址">
+                    <img src="壁画.jpg" alt="山西壁画艺术">
+                    <img src="历史文物.jpg" alt="历史文物展览">
+                    <img src="醋文化.jpg" alt="山西醋文化">
+                </div>
+            </div>
+        </section>
+        
+        <!-- 人工智能服务部分 -->
+        <section id="ai-services" class="page">
+            <h2>人工智能服务</h2>
+            <div class="content">
+                <p>山西文旅通过引入最新的人工智能技术，改变了游客体验方式。虚拟现实与增强现实技术，让游客穿越千年，亲身感受历史的脉搏；AI导览员提供个性化的服务，带您探索每一处山西的美景与文化。</p>
+
+                <ul class="ai-services-list">
+                    <li><strong>智能导览：</strong>AI为您提供精准的路线和解说，带您走遍山西的每一个角落。</li>
+                    <li><strong>VR体验：</strong>通过虚拟现实技术，您将进入一个栩栩如生的山西，感受历史与未来的交织。</li>
+                    <li><strong>AR展示：</strong>增强现实让您在山西的每个角落都能体验到生动的历史故事。</li>
+                </ul>
+
+                <div class="ai-chatbox">
+                    <h3>与AI导览员对话</h3>
+                    <div class="chat-container">
+                        <div id="chat-box" class="chat-box">
+                            <div class="bot-message">
+                                <p>你好！有什么问题我可以帮助你解答吗？(如：山西有哪些景点，山西的历史文化，山西有哪些小吃)</p>
+                            </div>
+                        </div>
+                        <input type="text" id="user-input" class="user-input" placeholder="输入问题..." aria-label="输入问题">
+                        <button onclick="submitMessage()">发送</button>
+                    </div>
+                </div>
+
+                <div class="user-feedback">
+                    <h3>用户反馈</h3>
+                    <p>"通过AI导览员，我能够更加深入地了解每一个景点，体验了真正的个性化旅行！"</p>
+                    <em>—— 游客李小姐</em>
+                </div>
+            </div>
+        </section>
+
+        <!-- 联系我们部分 -->
+        <section id="contact" class="page">
+            <h2>联系我们</h2>
+            <div class="content">
+                <p>欢迎联系山西文旅，我们将为您提供更多信息和支持，带您体验山西文旅的魅力。</p>
+                <form>
+                    <label for="name">姓名：</label><br>
+                    <input type="text" id="name" name="name" required><br><br>
+                    <label for="email">电子邮箱：</label><br>
+                    <input type="email" id="email" name="email" required><br><br>
+                    <textarea placeholder="留言内容" rows="4" cols="50" required></textarea><br><br>
+                    <button type="submit">提交</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 山西文旅 | 由AI驱动的创新体验</p>
+    </footer>
+</body>
+</html>
